@@ -66,7 +66,8 @@ class CreateTunnel
             }
 
             // Wait a bit until next iteration
-            usleep(config('tunneler.wait'));
+            //usleep(config('tunneler.wait'));
+            sleep(config('tunneler.wait'));
         }
 
         throw new \ErrorException(sprintf("Could Not Create SSH Tunnel with command:\n\t%s\nCheck your configuration.",
@@ -85,7 +86,8 @@ class CreateTunnel
             config('tunneler.nohup_log')
         ));
         // Ensure we wait long enough for it to actually connect.
-        usleep(config('tunneler.wait'));
+        //usleep(config('tunneler.wait'));
+        sleep(config('tunneler.wait'));
     }
 
     /**
